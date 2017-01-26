@@ -9,7 +9,7 @@ object LongLines {
   def processFile(filename: String, width: Int) = {
     val source = Source.fromFile(filename)
     for(line <- source.getLines())
-      processLine(filename, with, line)
+      processLine(filename, width, line)
   }
   private def processLine(filename: String, width: Int, line: String) = {
     if(line.length > width)
@@ -30,7 +30,7 @@ def processFile(filename: String, width: Int) = {
       println(filename + ": " + line.trim)
   }
   val source = Source.fromFile(filename)
-  for(line <- source.getLine()) {
+  for(line <- source.getLines()) {
     processLine(filename, width, line)
   }
 }
